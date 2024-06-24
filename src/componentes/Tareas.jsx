@@ -3,7 +3,7 @@ import Get from './Get';
 import deleteData from './Delete';
 import actualizarTarea from './Put';
 
-const Tareas = () => {
+const Tareas = ({setContador}) => {
     const [lista, setLista] = useState([]);
     useEffect(() => {
         const ListarTareas = async () => {
@@ -11,10 +11,11 @@ const Tareas = () => {
             setLista(Lista);
         };
         ListarTareas();
-    }, []);
+    }, [lista]);
 
     const handleCheckboxClick = async (task) => {
         await actualizarTarea(task);
+        
     };
 
     const handleDeleteClick = async (id) => {
@@ -23,6 +24,8 @@ const Tareas = () => {
 
     return (
         <div className="tasks">
+            
+            {lista.length === 0 ? <h2><img className='imgChibi' src="src/img/marzo.png"/>No hay tareas ingresa una con el input de arriba</h2>: undefined}
             {lista.map((task) => (
                 <ul className="task" key={task.id}>
                     <li>

@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Get from './Get';
 
-function Completadas() {
-    const [contador, setContador] = useState(0);
+function Completadas({contador,setContador}) {
 
     useEffect(() => {
         const change = async () => {
@@ -14,12 +13,12 @@ function Completadas() {
                 conteo++;
                 }
             });
-            setContador(conteo);
+            setContador(conteo)
            
         };
 
         change();
-        console.log(change)
+        
     }, []); 
     return (
         <div className="completadas">
