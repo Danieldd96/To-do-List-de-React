@@ -3,7 +3,7 @@ import Get from './Get';
 import deleteData from './Delete';
 import actualizarTarea from './Put';
 
-const Tareas = ({setContador}) => {
+const Tareas = () => {
     const [lista, setLista] = useState([]);
     useEffect(() => {
         const ListarTareas = async () => {
@@ -25,13 +25,13 @@ const Tareas = ({setContador}) => {
     return (
         <div className="tasks">
             
-            {lista.length === 0 ? <h2><img className='imgChibi' src="src/img/marzo.png"/>No hay tareas ingresa una con el input de arriba</h2>: undefined}
+            {lista.length === 0 ? <div className='noTasks'><img className='imgChibi' src="src/img/firefly.gif"/><h2>No hay tareas ingresa una con el input de arriba</h2></div>: undefined}
             {lista.map((task) => (
                 <ul className="task" key={task.id}>
                     <li>
-                        <p><input type="checkbox" defaultChecked={task.estado} onClick={() => handleCheckboxClick(task)}/>{task.tarea}</p>
+                        <p className='pTask'><input type="checkbox" className='inCheck' defaultChecked={task.estado} onClick={() => handleCheckboxClick(task)}/>{task.tarea}</p>
                     </li>
-                    <button onClick={() => handleDeleteClick(task.id)}>Borrar</button>
+                    <button className='btnDelete' onClick={() => handleDeleteClick(task.id)}>Borrar</button>
                 </ul>
             ))}
         </div>

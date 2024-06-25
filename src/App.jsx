@@ -16,7 +16,7 @@ function App() {
         <Header></Header>
         <Completadas contador={contador} setContador={setContador}></Completadas>
         <Contenedor ref1={inputRef}></Contenedor>
-        <Tareas setContador={setContador}></Tareas>
+        <Tareas></Tareas>
       </div>
     </>
   )
