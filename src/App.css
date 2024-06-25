@@ -76,7 +76,7 @@
 .noTasks{
   display: flex;
   padding: 20px 25px;
-  animation: firework 5s infinite;
+  animation: firework 5s infinite alternate;
 }
 .noTasks:hover{
   transform: scale(1.2);
@@ -187,7 +187,7 @@ h2{
   }
   100% { 
     width: 70vmin; 
-    opacity: 0; 
+    opacity: 1; 
   }
 }
 @keyframes neon-border {
