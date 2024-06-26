@@ -6,7 +6,7 @@
 }
 .completadas{
   display: grid;
-  padding-bottom: 20px;
+  padding: 10px;
 }
 
 #contador{
